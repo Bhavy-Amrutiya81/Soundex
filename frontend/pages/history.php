@@ -22,7 +22,7 @@ $orders = $orderManager->getUserOrders($userId);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order History - Soundex</title>
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/header.css?v=1.3">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -169,88 +169,11 @@ $orders = $orderManager->getUserOrders($userId);
             font-weight: 600;
         }
 
-        /* Nav Styles from Header.css usually, ensuring consistent look */
-        nav {
-            background-color: #fff;
-            overflow: hidden;
-            position: fixed;
-            display: flex;
-            z-index: 100;
-            width: 100%;
-            top: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            width: 100%;
-        }
-
-        nav ul li {
-            position: relative;
-        }
-
-        nav ul li a {
-            color: black;
-            padding: 14px 20px;
-            text-align: center;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-weight: bolder;
-            font-size: 0.9rem;
-            display: block;
-        }
-
-        .logo {
-            margin-right: auto;
-            padding-left: 20px;
-        }
-
-        .logo a h1 {
-            color: black;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 30px;
-            margin: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo p {
-            color: cornflowerblue;
-            margin: 0;
-        }
     </style>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <div class="logo"><a href="home.php">
-                    <h1>Soun<p>Dex</p>
-                    </h1>
-                </a></div>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="Gallery.php">Gallery</a></li>
-            <li><a href="history.php" style="color: #3498db;">History</a></li>
-            <li><a href="services.php">Services</a></li>
-            <li><a href="contact us.php">Contact</a></li>
-            <li><a href="about.php">About</a></li>
-            <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-                <li><a href="../admin/index.php" style="color: #f50057; font-weight: bold;">Admin Panel</a></li>
-            <?php endif; ?>
-
-            <li><a href="#" style="color: #0077cc; font-weight: bold;">
-                    <?php echo htmlspecialchars($username); ?>
-                </a></li>
-            <li><a href="../logout.php">Logout</a></li>
-
-            <li><a href="checkout.php" class="cart-icon">🛒</a></li>
-        </ul>
-    </nav>
+    <?php include '../includes/header.php'; ?>
 
     <div class="container">
         <div class="page-header">

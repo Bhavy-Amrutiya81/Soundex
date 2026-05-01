@@ -5,28 +5,31 @@
     padding: 14px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    color: #fff;
 }
 
 .cart-icon:hover {
-    color: #3498db;
+    color: #5dade2;
     transform: translateY(-2px);
 }
 
 .cart-count {
     position: absolute;
-    top: 8px;
-    right: 12px;
+    top: 5px;
+    right: 10px;
     background-color: #e74c3c;
     color: white;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
-    box-shadow: 0 2px 4px rgba(231, 76, 60, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .cart-icon.empty .cart-count {
@@ -34,8 +37,7 @@
 }
 
 /* ========================================
-   SOUNDex HEADER STYLES
-   Centralized navigation header styling
+   SOUNDEX HEADER STYLES (PREMIUM DARK THEME)
    ======================================== */
 
 /* Reset and base styles for header */
@@ -47,227 +49,162 @@
 
 /* Main Navigation Container */
 nav {
-    background-color: #fff;
-    overflow: hidden;
-    position: fixed;
-    display: flex;
-    z-index: 1000;
-    width: 100%;
-    top: 0;
-    left: 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #22313f !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    z-index: 999999 !important;
+    height: 80px !important;
+    display: flex !important;
+    align-items: center !important;
 }
 
 /* Navigation List */
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    list-style-type: none !important;
+    margin: 0 auto !important;
+    padding: 0 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 1400px !important;
+    height: 100% !important;
 }
 
 /* Logo Styling */
 .logo {
-    margin-right: auto;
+    margin-right: auto !important;
 }
 
 .logo a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
 }
 
 .logo h1 {
-    color: #000;
-    display: flex;
-    padding: 20px 40px;
-    text-transform: uppercase;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 30px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    color: #ffffff !important;
+    font-family: 'Playfair Display', 'Georgia', serif !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    transition: all 0.3s ease !important;
+}
+
+.logo h1 span {
+    color: #5dade2 !important; /* Light Blue / Cyan */
 }
 
 .logo h1:hover {
-    color: #3498db;
+    color: #5dade2 !important;
 }
 
-.logo p {
-    color: #3498db;
-    font-weight: 600;
-    font-family: 'Times New Roman', Times, serif;
-    margin-left: 2px;
+.logo h1:hover span {
+    color: #ffffff !important;
 }
 
-/* Navigation Links */
+/* Navigation Links Wrapper */
 nav ul li {
-    list-style: none;
-    display: inline-block;
+    list-style: none !important;
+    display: inline-block !important;
 }
 
+/* Base Link Styles */
 nav ul li a {
-    color: #000;
-    padding: 14px 30px;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 90%;
-    position: relative;
-    transition: all 0.3s ease;
-    display: block;
+    color: #ffffff !important;
+    padding: 0 15px !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
+    position: relative !important;
+    height: 80px !important;
+    line-height: 80px !important;
+    display: block !important;
+    transition: all 0.3s ease !important;
+    border-bottom: none !important;
 }
 
-/* Hover Effects */
+/* Hover State */
 nav ul li a:hover {
-    color: #3498db;
-    background-color: rgba(52, 152, 219, 0.1);
-    transform: translateY(-2px);
+    color: #5dade2 !important;
 }
 
-/* Animated underline effect */
+/* Animated Underline Effect for Hover and Active */
 nav ul li a::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background-color: #3498db;
-    transition: all 0.5s ease;
-    transform: translateX(-50%);
+    content: '' !important;
+    position: absolute !important;
+    bottom: 25px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 0 !important;
+    height: 2px !important;
+    background-color: #5dade2 !important;
+    transition: all 0.3s ease !important;
 }
 
-nav ul li a:hover::before {
-    width: 70%;
+nav ul li a:hover::before,
+nav ul li a.active::before {
+    width: 70% !important;
 }
 
-/* Active page indicator */
+/* Active Page Indicator */
 nav ul li a.active {
-    color: #3498db;
-    font-weight: bolder;
-}
-
-nav ul li a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 15%;
-    width: 70%;
-    height: 3px;
-    background-color: #3498db;
+    color: #5dade2 !important;
 }
 
 /* Responsive Design */
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-    .logo h1 {
-        padding: 15px 30px;
-        font-size: 26px;
+@media screen and (max-width: 1200px) {
+    nav ul {
+        padding: 0 20px !important;
     }
-    
     nav ul li a {
-        padding: 12px 25px;
-        font-size: 85%;
+        padding: 0 10px !important;
+        font-size: 12px !important;
     }
 }
 
-@media screen and (max-width: 768px) and (min-width: 601px) {
+@media screen and (max-width: 992px) {
     nav {
-        flex-wrap: wrap;
-        padding: 0;
+        height: auto !important;
+        padding: 10px 0 !important;
     }
-    
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column !important;
+        padding: 0 !important;
     }
-    
-    nav ul li a {
-        padding: 10px 15px;
-        font-size: 80%;
-    }
-    
-    .logo h1 {
-        padding: 15px 20px;
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
     nav ul li {
-        width: 100%;
-        text-align: center;
+        width: 100% !important;
     }
-    
     nav ul li a {
-        padding: 12px;
-        border-bottom: 1px solid #eee;
-        font-size: 16px;
+        height: 50px !important;
+        line-height: 50px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
     }
-    
+    nav ul li a::before {
+        bottom: 5px !important;
+    }
     .logo {
-        text-align: center;
-        margin: 0;
-        padding: 10px 0;
+        margin: 0 0 10px 0 !important;
+        text-align: center !important;
+        width: 100% !important;
     }
-    
-    .logo h1 {
-        padding: 10px;
-        font-size: 22px;
-        justify-content: center;
+    .logo a {
+        justify-content: center !important;
     }
-    
-    /* Mobile menu toggle (if needed) */
-    .menu-toggle {
-        display: none;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        cursor: pointer;
-        font-size: 24px;
-        z-index: 1001;
+    .cart-icon {
+        margin: 10px 0 !important;
+        justify-content: center !important;
     }
 }
 
-/* Accessibility Improvements */
-nav ul li a:focus {
-    outline: 2px solid #3498db;
-    outline-offset: 2px;
-}
-
-/* Print Styles */
-@media print {
-    nav {
-        display: none;
-    }
-}
-
-/* Dark Mode Support (optional) */
-@media (prefers-color-scheme: dark) {
-    nav {
-        background-color: #2c3e50;
-    }
-    
-    nav ul li a {
-        color: #ecf0f1;
-    }
-    
-    nav ul li a:hover {
-        color: #3498db;
-        background-color: rgba(52, 152, 219, 0.2);
-    }
-    
-    .logo h1 {
-        color: #ecf0f1;
-    }
+/* Global body padding to compensate for fixed header */
+body {
+    padding-top: 80px;
 }

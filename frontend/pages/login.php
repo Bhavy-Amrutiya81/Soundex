@@ -54,13 +54,14 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Soundex</title>
+    <link rel="stylesheet" href="../css/header.css?v=1.3" />
     <style>
         body {
             margin: 0;
-            padding: 0;
+            padding-top: 80px;
             background-color: #50bbed;
             font-family: 'Segoe UI', sans-serif;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -128,6 +129,11 @@ if (isset($_SESSION['user_id'])) {
 </head>
 
 <body>
+    <?php
+    $isLoggedIn = isset($_SESSION['user_id']);
+    $username = $isLoggedIn ? $_SESSION['username'] : '';
+    include '../includes/header.php';
+    ?>
     <div class="login-container">
         <h2>Login to Soundex</h2>
         <p>Access your account to continue shopping</p>

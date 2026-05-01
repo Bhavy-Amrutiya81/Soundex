@@ -22,41 +22,14 @@ $username = $isLoggedIn ? $_SESSION['username'] : '';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/header.css" />
-  <link rel="stylesheet" href="../css/shared.css">
-  <link rel="stylesheet" href="../css/faqs.css">
+  <link rel="stylesheet" href="../css/header.css?v=1.3" />
+  <link rel="stylesheet" href="../css/shared.css?v=1.3">
+  <link rel="stylesheet" href="../css/faqs.css?v=1.3">
 </head>
 
 <body>
   <!-- Navigation Header -->
-  <nav>
-    <ul>
-      <div class="logo"><a href="../pages/about.php">
-          <h1>Soun<p>Dex</p>
-          </h1>
-        </a></div>
-      <li><a href="../pages/home.php">Home</a></li>
-      <li><a href="../pages/Gallery.php">Gallery</a></li>
-      <li><a href="../pages/faqs.php" class="active">FAQs</a></li>
-      <li><a href="../pages/services.php">Services</a></li>
-      <li><a href="../pages/contact us.php">Contact</a></li>
-      <li><a href="../pages/about.php">About</a></li>
-      <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-        <li><a href="../admin/index.php" style="color: #f50057; font-weight: bold;">Admin Panel</a></li>
-      <?php endif; ?>
-      <?php if ($isLoggedIn): ?>
-        <li><a href="#" style="color: #0077cc; font-weight: bold;"><?php echo htmlspecialchars($username); ?></a></li>
-        <li><a href="../logout.php">Logout</a></li>
-      <?php else: ?>
-        <li><a href="../pages/login.php">Login</a></li>
-        <li><a href="../pages/signup.php">Sign Up</a></li>
-      <?php endif; ?>
-      <li><a href="../pages/checkout.php" class="cart-icon" id="cartIcon">
-          🛒
-          <span class="cart-count" id="cartCount">0</span>
-        </a></li>
-    </ul>
-  </nav>
+  <?php include '../includes/header.php'; ?>
 
   <main class="main-content">
     <section class="faq-section section-padding">
@@ -66,7 +39,7 @@ $username = $isLoggedIn ? $_SESSION['username'] : '';
 
       <div class="faq-container">
         <div class="faq-item">
-          <div class="faq-question">How do I buy a speaker on Soundex?</div>
+          <!-- <div class="faq-question">How do I buy a speaker on Soundex?</div> -->
           <div class="faq-answer">Browse our store, select your product, and proceed to checkout with secure payment
             options.</div>
         </div>
@@ -121,24 +94,6 @@ $username = $isLoggedIn ? $_SESSION['username'] : '';
   </footer>
 
   <script src="../js/faqs.js"></script>
-  <script>
-    function updateCartCount() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const totalItems = cart.reduce((total, item) => total + (item.quantity || 1), 0);
-      const cartCountElement = document.getElementById('cartCount');
-      const cartIconElement = document.getElementById('cartIcon');
-
-      if (cartCountElement) {
-        cartCountElement.textContent = totalItems;
-        if (totalItems > 0) {
-          cartIconElement.classList.remove('empty');
-        } else {
-          cartIconElement.classList.add('empty');
-        }
-      }
-    }
-    document.addEventListener('DOMContentLoaded', updateCartCount);
-  </script>
 </body>
 
 </html>

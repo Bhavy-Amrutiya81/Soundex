@@ -22,41 +22,14 @@ $username = $isLoggedIn ? $_SESSION['username'] : '';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/header.css" />
-  <link rel="stylesheet" href="../css/shared.css">
-  <link rel="stylesheet" href="../css/services.css">
+  <link rel="stylesheet" href="../css/header.css?v=1.3" />
+  <link rel="stylesheet" href="../css/shared.css?v=1.3">
+  <link rel="stylesheet" href="../css/services.css?v=1.2">
 </head>
 
 <body>
   <!-- Navigation Header -->
-  <nav>
-    <ul>
-      <div class="logo"><a href="../pages/about.php">
-          <h1>Soun<p>Dex</p>
-          </h1>
-        </a></div>
-      <li><a href="../pages/home.php">Home</a></li>
-      <li><a href="../pages/Gallery.php">Gallery</a></li>
-      <li><a href="../pages/faqs.php">FAQs</a></li>
-      <li><a href="../pages/services.php" class="active">Services</a></li>
-      <li><a href="../pages/contact us.php">Contact</a></li>
-      <li><a href="../pages/about.php">About</a></li>
-      <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-        <li><a href="../admin/index.php" style="color: #f50057; font-weight: bold;">Admin Panel</a></li>
-      <?php endif; ?>
-      <?php if ($isLoggedIn): ?>
-        <li><a href="#" style="color: #0077cc; font-weight: bold;"><?php echo htmlspecialchars($username); ?></a></li>
-        <li><a href="../logout.php">Logout</a></li>
-      <?php else: ?>
-        <li><a href="../pages/login.php">Login</a></li>
-        <li><a href="../pages/signup.php">Sign Up</a></li>
-      <?php endif; ?>
-      <li><a href="../pages/checkout.php" class="cart-icon" id="cartIcon">
-          🛒
-          <span class="cart-count" id="cartCount">0</span>
-        </a></li>
-    </ul>
-  </nav>
+  <?php include '../includes/header.php'; ?>
 
   <main class="main-content">
     <section class="services-section section-padding">

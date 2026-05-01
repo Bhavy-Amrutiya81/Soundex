@@ -165,30 +165,14 @@ if ($_POST) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/header.css" />
-  <link rel="stylesheet" href="../css/shared.css">
-  <link rel="stylesheet" href="../css/internship.css">
+  <link rel="stylesheet" href="../css/header.css?v=1.3" />
+  <link rel="stylesheet" href="../css/shared.css?v=1.3">
+  <link rel="stylesheet" href="../css/internship.css?v=1.3">
 </head>
 
 <body>
   <!-- Navigation Header -->
-  <nav>
-    <ul>
-      <div class="logo"><a href="../pages/about.php">
-          <h1>Soun<p>Dex</p>
-          </h1>
-        </a></div>
-      <li><a href="../pages/home.php">Home</a></li>
-      <li><a href="../pages/Gallery.php">Gallery</a></li>
-      <li><a href="../pages/faqs.php">FAQs</a></li>
-      <li><a href="../pages/services.php">Services</a></li>
-      <li><a href="../pages/contact us.php">Contact</a></li>
-      <li><a href="../pages/about.php">About</a></li>
-      <!-- Admin Link is missing session logic in original file, added for consistency but relies on external session start or this file needs session_start() -->
-      <!-- Since this file didn't have session_start() at top but accessed SESSION implicitly in other files, added check -->
-      <!-- Wait, this file handles form submission but didn't have session_start(). Adding it. -->
-    </ul>
-  </nav>
+  <?php include '../includes/header.php'; ?>
 
   <!-- Since shared header logic requires session, need to ensure session is started at top of file -->
   <!-- Modifying top of file to include session_start() -->
